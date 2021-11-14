@@ -120,14 +120,16 @@ public class CryptoEndpointTest {
 
     @Test
     public void testCryptoAllNoAuth() {
+        login("user", "test");
         given()
                 .contentType("application/json")
+                .accept(ContentType.JSON)
+                .header("x-access-token", securityToken)
                 .when()
                 .get("/crypto/all").then()
                 .statusCode(200)
                 .body("tickers.from", hasItems("BTC", "ETH", "DOGE", "LTC", "XRP"));
     }
-
 
 
 }
