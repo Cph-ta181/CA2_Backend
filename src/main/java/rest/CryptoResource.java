@@ -26,7 +26,7 @@ public class CryptoResource {
 
     @GET
     @Produces(MediaType.APPLICATION_JSON)
-    @RolesAllowed("user")
+    @RolesAllowed({"user", "admin"})
     public String getCrypto() throws IOException, ExecutionException, InterruptedException {
        String result = gson.toJson(HttpUtils.fetchData("https://api.coinstats.app/public/v1/tickers?exchange=yobit&pair=BTC-USD"));
         System.out.println(result);
@@ -34,7 +34,7 @@ public class CryptoResource {
     }
     @GET
     @Produces(MediaType.APPLICATION_JSON)
-    @RolesAllowed("user")
+    @RolesAllowed({"user", "admin"})
     @Path("/all")
     public String getAll() throws IOException, ExecutionException, InterruptedException {
         return gson.toJson(HttpUtils.fetchDataParallel());
