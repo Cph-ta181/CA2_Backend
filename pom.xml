@@ -19,7 +19,7 @@
         <remote.server>https://tomsten.dk/tomcat/manager/text</remote.server>
 
         <!-- TODO: Add your own database name -->
-        <!-- IMPORTANT-1: The database should exist on your droplet -->
+        <!-- IMPORTANT: The database should exist on your droplet -->
         <db.name>CA2</db.name>
     </properties>
 
